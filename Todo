@@ -1,0 +1,9 @@
+TESTS => {
+  1. Test Adding items,
+  2. Test Removing Items,
+  3. Test Getting Id by name,
+  4. Test Getting new UID
+  5. Test Getting Id by any property of the object
+  6. make sure its all good after you write all tests 
+  
+}
