@@ -80,7 +80,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__storage_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__storage_js__);
 
 
-const storage = new __WEBPACK_IMPORTED_MODULE_0__storage_js___default.a()
+const estoque = new __WEBPACK_IMPORTED_MODULE_0__storage_js___default.a()
 
 const EXAMPLE = {
   name: 'Bolacha maria',
@@ -92,65 +92,29 @@ const EXAMPLE = {
     month: 9,
     year: 2018
   },
-
-  arrived: {
-    second: 19,
-    minute: 50,
-    hour: 17,
-    day: 26,
-    month: 2,
-    year: 2018
-  },
-
   sender: 'Fulano',
   reciever: 'blooodoopy | walmart',
   wasDamaged: false,
-
-  nutritionalInfo: {
-    servingSize: 4,
-    grams: 25,
-    amountPerServing: {
-      calories: {
-        grams: 109
-      },
-
-      totalFat: {
-        grams:2.3, 
-        percentage:4
-      },
-
-      saturatedFat: {
-        grams: 1.1,
-        percentage: 6
-      },
-
-      cholesterol: '-',
-
-      sodium: {
-        mg: 100,
-        percentage: 4
-      },
-
-      totalCarbohydrate: {
-        grams: 20.2,
-        percentage: 7
-      },
-
-      dietaryFiber: {
-        grams: 0.4,
-        percentage: 2
-      },
-
-      sugars: {
-        grams: 5.8
-      },
-
-      protein: {
-        grams: 1.9
-      }
-    }
-  }
 }
+
+let produto = {
+  nome: 'Passa Tempo',
+  tipo: 'Bolacha'
+}
+
+estoque.add(produto).then(item => {
+  let inputPesquisa = document.getElementById('textSearch')
+
+  inputPesquisa
+  .addEventListener('input', () => {
+    let inputValue = inputPesquisa.value
+    estoque.getIdByName(inputValue).then(id => {
+      console.log(id)
+    })
+  })
+})
+
+
 
 
 /***/ }),
@@ -192,7 +156,7 @@ class Storage {
       let nameMatch = false
       let msg = "Could not get id of item with name: " + name
       for(let value of this.inventory) {
-        nameMatch = (value[1].name.toLowerCase() === name.toLowerCase() || value[1].nome.toLowerCase() === name.toLowerCase())
+        nameMatch = (value[1].nome.toLowerCase() === name.toLowerCase())
         nameMatch ? resolve(value[0]) : reject(new Error(msg))
       }
     })

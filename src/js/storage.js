@@ -33,7 +33,7 @@ class Storage {
       let nameMatch = false
       let msg = "Could not get id of item with name: " + name
       for(let value of this.inventory) {
-        nameMatch = (value[1].name.toLowerCase() === name.toLowerCase() || value[1].nome.toLowerCase() === name.toLowerCase())
+        nameMatch = (value[1].nome.toLowerCase() === name.toLowerCase())
         nameMatch ? resolve(value[0]) : reject(new Error(msg))
       }
     })
