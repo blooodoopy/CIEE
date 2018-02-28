@@ -25,11 +25,8 @@ test('Correct inventory size', () => {
   storage.add(test1)
     .then(item => {
       expect(storage.inventory.size).toBe(1)
-    }.n,,- kv c)
-    .catch( err => {
-      console.log(err)
     })
-  
+    .catch(err => console.log(err))
 })
 
 test('Correct item properties', () => {
