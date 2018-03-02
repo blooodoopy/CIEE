@@ -9,7 +9,8 @@ class Storage {
     let UID = this.getNewUID()
     return new Promise((resolve, reject) => {
       try {
-        resolve(this.inventory.set(UID, item))
+      this.ids.set(UID, true)
+      resolve(this.inventory.set(UID, item))
       } catch(err) {
         reject(new Error(err))
       }
@@ -20,7 +21,8 @@ class Storage {
     let item = this.inventory.get(id)
     return new Promise((resolve, reject) => {
       if(this.inventory.delete(id)) {
-          resolve(item)
+        this.ids.delete(id)
+        resolve(item)
       } else {
         const msg = "Could not delete item with id: " + id
         reject(new Error(msg))
@@ -39,11 +41,24 @@ class Storage {
     })
   }
   
-  get(val, prop, callback) {
+  find(anything) {
+    let itemMatch = !1
+    let itemFound
+    let search = anything.toString().toLowerCase()
+
+    //entries() returns an array with: key and data associated with that key
+    for(let entry of this.inventory.entries()) {
+      Object.entries(entry[1]).forEach(([key, value]) => {
+        if(search === value.toString().toLowerCase()) {
+          itemFound = entry[1]
+          itemMatch = !0
+        }
+      })
+    }
+
     return new Promise((resolve, reject) => {
-      for(let value of this.inventory) {
-        
-      }
+      const msg = 'Nothing found for search ' + anything
+      itemMatch ? resolve(itemFound) : reject(new Error(msg))
     })
   }
   

@@ -80,42 +80,154 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__storage_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__storage_js__);
 
 
-const estoque = new __WEBPACK_IMPORTED_MODULE_0__storage_js___default.a()
+const storage = new __WEBPACK_IMPORTED_MODULE_0__storage_js___default.a()
 
-const EXAMPLE = {
-  name: 'Bolacha maria',
-  type: 'bolacha',
-  category: 'comida',
-  price: 2.99,
-  validity: {
-    day: 2,
-    month: 9,
-    year: 2018
+const produtos = [
+  {
+    nome: 'Cookie',
+    tipo: 'Biscoito',
+    preço: 3.99,
+    validade: {
+      dia: 14,
+      mês: 10,
+      ano: 2018
+    },
+    chegada: {
+      dia: 1,
+      mês: 3,
+      ano: 2018
+    }
   },
-  sender: 'Fulano',
-  reciever: 'blooodoopy | walmart',
-  wasDamaged: false,
+
+  {
+    nome: 'bolacha maria',
+    tipo: 'bolacha',
+    preço: 6.99,
+    validade: {
+      dia: 14,
+      mês: 10,
+      ano: 2018
+    },
+    chegada: {
+      dia: 1,
+      mês: 3,
+      ano: 2018
+    }
+  },
+
+  {
+    nome: 'Pastel',
+    tipo: 'Salgado/comida',
+    preço: 2.99,
+    validade: {
+      dia: 14,
+      mês: 10,
+      ano: 2018
+    },
+    chegada: {
+      dia: 1,
+      mês: 3,
+      ano: 2018
+    }
+  },
+
+  {
+    nome: 'Coca cola',
+    tipo: 'bebida',
+    preço: 5.49,
+    validade: {
+      dia: 14,
+      mês: 10,
+      ano: 2018
+    },
+    chegada: {
+      dia: 1,
+      mês: 3,
+      ano: 2018
+    }
+  },
+
+  {
+    nome: 'ração de dragão',
+    tipo: 'comida/pet',
+    preço: 49.99,
+    validade: {
+      dia: 14,
+      mês: 10,
+      ano: 2018
+    },
+    chegada: {
+      dia: 1,
+      mês: 3,
+      ano: 2018
+    }
+  },
+
+  {
+    nome: 'Casinha para dragão',
+    tipo: 'pet',
+    preço: 299.99,
+    garantia: {
+      dia: 1,
+      mês: 3,
+      ano: 2019
+    },
+    chegada: {
+      dia: 1,
+      mês: 3,
+      ano: 2018
+    }
+  },
+
+  {
+    nome: 'ideapad 320',
+    tipo: 'laptop',
+    preço: 2799.99,
+    garantia: {
+      dia: 1,
+      mês: 3,
+      ano: 2019
+    },
+    chegada: {
+      dia: 1,
+      mês: 3,
+      ano: 2018
+    }
+  },
+
+  {
+    nome: 'Moto z play',
+    tipo: 'smartphone',
+    preço: 1927.97,
+    garantia: {
+      dia: 1,
+      mês: 3,
+      ano: 2029
+    },
+    chegada: {
+      dia: 1,
+      mês: 3,
+      ano: 2018
+    }
+  }
+]
+
+for(let i = 0; i <produtos.length; i++) {
+  storage.add(produtos[i])
+
 }
 
-let produto = {
-  nome: 'Passa Tempo',
-  tipo: 'Bolacha'
-}
+const textInput = document.getElementById('textSearch')
+const itemFound = document.getElementById('itemContainer')
 
-estoque.add(produto).then(item => {
-  let inputPesquisa = document.getElementById('textSearch')
-
-  inputPesquisa
-  .addEventListener('input', () => {
-    let inputValue = inputPesquisa.value
-    estoque.getIdByName(inputValue).then(id => {
-      console.log(id)
-    })
+textInput.addEventListener('input', () => {
+  const inputValue = textInput.value
+  storage.find(inputValue).then(item => {
+    itemFound.innerHTML = JSON.stringify(item, null, 2)
   })
+
+
 })
-
-
-
 
 /***/ }),
 /* 2 */
@@ -132,7 +244,8 @@ class Storage {
     let UID = this.getNewUID()
     return new Promise((resolve, reject) => {
       try {
-        resolve(this.inventory.set(UID, item))
+      this.ids.set(UID, true)
+      resolve(this.inventory.set(UID, item))
       } catch(err) {
         reject(new Error(err))
       }
@@ -143,7 +256,8 @@ class Storage {
     let item = this.inventory.get(id)
     return new Promise((resolve, reject) => {
       if(this.inventory.delete(id)) {
-          resolve(item)
+        this.ids.delete(id)
+        resolve(item)
       } else {
         const msg = "Could not delete item with id: " + id
         reject(new Error(msg))
@@ -162,11 +276,24 @@ class Storage {
     })
   }
   
-  get(val, prop, callback) {
+  find(anything) {
+    let itemMatch = !1
+    let itemFound
+    let search = anything.toString().toLowerCase()
+
+    //entries() returns an array with: key and data associated with that key
+    for(let entry of this.inventory.entries()) {
+      Object.entries(entry[1]).forEach(([key, value]) => {
+        if(search === value.toString().toLowerCase()) {
+          itemFound = entry[1]
+          itemMatch = !0
+        }
+      })
+    }
+
     return new Promise((resolve, reject) => {
-      for(let value of this.inventory) {
-        
-      }
+      const msg = 'Nothing found for search ' + anything
+      itemMatch ? resolve(itemFound) : reject(new Error(msg))
     })
   }
   
