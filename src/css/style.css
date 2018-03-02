@@ -4,31 +4,115 @@
   text-decoration: none;
 }
 
+
 img {
   height: 30px;
   
 }
 
+#search {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
+  width: 1500px;
+
+}
+
 #textSearch {
-  font-size: 28pt;
+  font-size: 32pt;
   background: none;
   border: none;
   border-bottom: 1px solid grey;
-  width: 800px;
+  width: 1400px;
   height: 50px;
-  
 }
 
 #textSearch:focus {
-  font-size: 28pt;
+  font-size: 32pt;
   background: none;
   border: none;
   border-bottom: 1px solid grey;
-  width: 800px;
+  width: 1400px;
   height: 50px;
-  outline:none; 
+  outline:none;
+
 }
 
 #itemContainer {
   font-size: 32pt;
+
+}
+
+#data {
+  margin: auto;
+  width: 400px;
+  display:block;
+  font-size: 28pt;
+
+}
+
+#nome {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px; 
+}
+
+#tipo {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px; 
+}
+
+#preço {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px; 
+}
+
+#diaVal {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px; 
+}
+
+#mesVal {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px; 
+}
+
+#anoVal {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px; 
+}
+
+#diaChegada {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px; 
+}
+
+#mesChegada {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px; 
+}
+
+#anoChegada {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px; 
+}
+
+#responsavel {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px;
+}
+
+#submit {
+  font-size: 22pt;
+  width: 200px;
+  height: 40px;
 }

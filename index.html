@@ -8,14 +8,34 @@
     <title>Curso CIEE | Sistema simples de estoque</title>
   </head>
   <body>
-
-  <img src="https://cdn.pixabay.com/photo/2016/03/31/19/14/magnifying-glass-1294834__340.png" alt="">
+  <div id="search">
+  <img src="https://cdn.pixabay.com/photo/2016/03/31/19/14/magnifying-glass-1294834__340.png" alt="lupa">
 
   <input type="text" id="textSearch" placeholder="Pesquise os produtos pelo nome...">
-  <div>
-    <pre id="itemContainer">
+    <pre id="itemContainer"></pre>
+  </div>
+  <div id="data">
+    <button id="submit">Adicionar</button>
+    <p>Nome: </p>
+    <input type="text" id="nome">
+    <p>Tipo: </p>
+    <input type="text" id="tipo">
+    <p>Preço: </p>
+    <input type="text" id="preço">
+    <ul>
+      <p>Validade: </p>
+      <li>Dia: <input type="text" id="diaVal"></li>
+      <li>Mês: <input type="text" id="mesVal"></li>
+      <li>Ano: <input type="text" id="anoVal"></li>
+    </ul>
+    <ul>
+        <p>Chegada: </p>
+        <li>Dia: <input type="text" id="diaChegada"></li>
+        <li>Mês: <input type="text" id="mesChegada"></li>
+        <li>Ano: <input type="text" id="anoChegada"></li>
+        <li>Responsavel: <input type="text" id="responsavel"></li>
+    </ul>
 
-    </pre>
   </div>
 
   <script src="./dist/bundle.js"></script>
