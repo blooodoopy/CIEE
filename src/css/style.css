@@ -5,27 +5,30 @@
 }
 
 img {
-  margin: 200px 0 0 200px;
-  height: 40px;
+  height: 30px;
   
 }
 
 #textSearch {
-  margin: 0;
+  font-size: 28pt;
   background: none;
   border: none;
   border-bottom: 1px solid grey;
   width: 800px;
-  height: 30px;
+  height: 50px;
   
 }
 
 #textSearch:focus {
-  margin: 0;
+  font-size: 28pt;
   background: none;
   border: none;
   border-bottom: 1px solid grey;
   width: 800px;
-  height: 30px;
+  height: 50px;
   outline:none; 
+}
+
+#itemContainer {
+  font-size: 32pt;
 }
