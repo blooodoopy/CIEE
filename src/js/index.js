@@ -178,7 +178,6 @@ const produtos = [
       ano: 2018
     }
   }
-
 ]
 
 for(let i = 0; i <produtos.length; i++) {
@@ -212,7 +211,11 @@ button.addEventListener('click', () => {
       mes: mesVal.value,
       ano: anoVal.value
     },
-    chegada: nome.value,
+    chegada: {
+      dia: diaChegada.value,
+      mes: mesChegada.value,
+      ano: anoChegada.value
+    },
     responsavel: responsavel.value
   }
   storage.add(newProduto).then(item => {
