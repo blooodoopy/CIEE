@@ -1,10 +1,4 @@
-// TUMBLR LOGO
-
-// https://seeklogo.com/images/T/tumblr-icon-logo-B9245680F1-seeklogo.com.png
-
-// se quiser usar outra imagem da logo do TUMBLR, fique avontade mas eu peguei essa aqui
-
-// # IMPORTANTE #
+﻿// # IMPORTANTE #
 // OBS: TODA LINHA QUE COMEÇAR COM "//" vc IGNORA, assim como esta, 
 // E copia e cola o resto no trabalho seguindo o que eu pedi ali nos slides 
 // Ou do seu jeito se achar melhor.
@@ -12,7 +6,6 @@
 
 
 // minha parte --->>
-
 
 
 
@@ -27,25 +20,19 @@ Vantagens do tumblr sobre o facebook: *TITULO*
 
 
 // 2° SLIDE
-// *essa imagem* ----> 
-
-
-// 3° SLIDE
 
 Como funciona o tumblr: *TITULO*
 
 @ Tumblr é basicamente a mesma coisa que o facebook, só que diferente!
 @ Você cria uma conta, procura os blogs/posts/pessoas que vc gosta e pronto
-@ Vários fotógrafos postam suas fotos no tumblr, oque deixa a rede social Cheia de imagens espetaculares como estas...
+@ Vários fotógrafos postam suas fotos no tumblr, 
+oque deixa a rede social Cheia de imagens espetaculares como estas...
 
 
 // 3° SLIDE
-//IMAGENS espetaculares... --->
+
+//IMAGENS ... --->
 Link: https://78.media.tumblr.com/1f1a041440b531a1749f6da251fb3e23/tumblr_ndwt46mY7b1qei2wfo1_500.jpg
-Link: https://wallpapercave.com/wp/WIzDZz0.jpg
-Link: http://hddesktopwallpapers.in/wp-content/uploads/2015/09/cute-tumblr-wallpapers.jpg
-Link: https://www.walldevil.com/wallpapers/a94/cat-wallpaper-funny-photo-animals-think-wallpapers-tabby-book-cute-little.jpg
-Link: https://www.pixelstalk.net/wp-content/uploads/2016/10/Cat-Wallpaper-Tumblr-For-Desktop.jpg
 
 // 4° SLIDE
 
@@ -88,10 +75,11 @@ Link da Imagem: http://kb4images.com/images/cute-pictures-tumblr/37028151-cute-p
 Link da Imagem: https://www.pixelstalk.net/wp-content/uploads/2016/07/Dope-Desktop-Wallpapers-Tumblr.jpg
 Link da Imagem: https://s4.favim.com/orig/151206/autumn-boho-boy-cafe-Favim.com-3713924.jpg
 
+// 5° SLIDE
 
+Curiosidades sobre o tumblr e seu criador
 
-// CONCLUSÃO:
-// Com esse trabalho concluimos que, 
-// Tumblr é uma rede social muito famosa nos estados unidos 
-// e pouco conhecida no brasil, 
-// e por último Tumblr > Facebook
+@ Seu criador deixou os estudos para terminar sua ideia
+@ Tumblr usa machine learning para recomendações de conteúdo
+//se vc não falou sobre isso ainda... dai vc faz esse proximo
+@ Yahoo comprou Tumblr em 2013 por 1,1 bilhões de dolares
