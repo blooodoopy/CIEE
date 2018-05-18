@@ -64,6 +64,7 @@ class Storage {
   
   log() {
     if(this.inventory.size < 1) {
+		//should somehow tell the user this using some notification system...
       console.log('No items to be displayed!')
     } else {
       for(let value of this.inventory) {
@@ -74,6 +75,7 @@ class Storage {
   }
   
   getNewUID() {
+	//crazy long line of code
     const uniqueId = (Math.random().toString(36).substr(2, 9) + '' + Math.random().toString(36).substr(2, 9) + '' + Math.random().toString(36).substr(2, 9) + '' + Math.random().toString(36).substr(2, 9)).toLowerCase()
     if(!this.ids.has(uniqueId)) {
       return uniqueId

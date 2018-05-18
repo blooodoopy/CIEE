@@ -185,6 +185,7 @@ for(let i = 0; i <produtos.length; i++) {
 
 }
 
+//hell bellow
 const textInput = document.getElementById('textSearch')
 const itemFound = document.getElementById('itemContainer')
 
